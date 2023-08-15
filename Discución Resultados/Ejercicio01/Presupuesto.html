@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto de hospital</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous">
+
+</head>
+<body class="container">
+    <script>
+        document.write("<h1>Presupuesto de hospital</h1>");
+        var presupuesto, dermatologia, traumatologia, pediatria, sobrante, total;
+        var h1, totalh1;
+        presupuesto = parseFloat(prompt('Ingrese el presupuesto a usar: ',''));
+        dermatologia = presupuesto * 0.40;
+        traumatologia = presupuesto * 0.30;
+        pediatria = presupuesto * 0.25;
+        sobrante = presupuesto - dermatologia - traumatologia - pediatria;
+
+        document.write("<h1 class='alert alert-primary'>Presupuesto: $" + presupuesto + "</h1><hr>");
+        document.write("<h1 class='alert alert-primary'>Dermatología:  $" + dermatologia+ "</h1><hr>");
+        document.write("<h1 class='alert alert-primary'>Traumatología:  $" + traumatologia + "</h1><hr>");
+        document.write("<h1 class='alert alert-primary'>Pedriatría: $" + pediatria + "</h1><hr>");
+        document.write("<h1 class='alert alert-primary'>Sobrante: $" + sobrante + "</h1><hr>");
+
+        h1 = document.getElementByTagName('h1');
+        totalh1 = h1.length;
+        for(var i=0; i <totalh1;i++){
+            h1[i].onmouseover = function(){
+                this.className = 'alert alert-info';
+            }
+            h1[i].onmouseout = function(){
+                this.className = 'alert alert-primary';
+            }
+        }
+    </script>  
+</body>
+</html>
